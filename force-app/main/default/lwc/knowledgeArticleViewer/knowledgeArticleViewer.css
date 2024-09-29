@@ -481,20 +481,20 @@ svg {
 
 /* Start Table Styles */
 
-.table {
+table {
     width: 100%;
     border-collapse: collapse;
 	margin: 20px 0;
 }
 
 th, td {
-    border: 1px solid var(--neutral-color-light);
+    border: 1px solid var(--neutral-color-medium);
     padding: 8px;
     text-align: left;
 }
 
 thead {
-    background-color: var(--neutral-color-medium); /* Background for header */
+    background-color: var(--neutral-color-light); /* Background for header */
 	color: var(--body-color);
 }
 
