@@ -128,7 +128,7 @@
 
 /* BEGIN STYLES */
 
-:root {
+:host {
 	--primary-color: #f57424;
 	--primary-color-dark: #d86221;
 	--body-color: #1a1a1a;
