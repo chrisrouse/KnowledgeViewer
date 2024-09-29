@@ -141,7 +141,7 @@
 	--warning-color-light: #feedaf80;
 	--warning-color-dark: #fbc91633;
 	--white: #fff;
-	--list-color: var(--primary-color);
+	--list-color: var(--body-color);
 	--font-family-primary: 'amplify-regular';
 	--font-family-secondary: 'benton-sans-regular';
 	--font-family-secondary-bold: 'benton-sans-medium';
@@ -157,7 +157,7 @@
 /* Font Styles */
 
 .kv-container {
-	max-width: 600px;
+	max-width: 640px;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-feature-settings: "kern";
@@ -284,9 +284,9 @@ p {
 
 ul,
 ol {
-	margin: 0 0 24px;
-	padding: 0;
+	padding: 0 0 0 16px;
 	list-style: none !important;
+	font-size: var(--font-size);
 }
 
 li {
@@ -296,7 +296,7 @@ li {
 }
 
 li:first-child {
-	margin-top: 0;
+	margin-top: 24px;
 }
 
 
@@ -352,13 +352,13 @@ ol[style="list-style-type: lower-roman;"]>li::before {
 }
 
 ol[style="list-style-type: lower-greek;"]>li::before {
-	background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23f37321' d='m173.898 439.404-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z'/%3E%3C/svg%3E") 50% / cover no-repeat;
+	background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%231a1a1a' d='m173.898 439.404-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z'/%3E%3C/svg%3E") 50% / cover no-repeat;
 	content: "";
-	height: 1.125rem;
+	height: var(--font-size-small);
 	left: 0;
 	position: absolute;
 	top: .1875rem;
-	width: 1.125rem;
+	width: var(--font-size-small);
 }
 
 ol a,
@@ -481,33 +481,30 @@ svg {
 
 /* Start Table Styles */
 
-table {
-	border-collapse: collapse;
-	font-size: calc(var(--font-size) - 2px);
-	margin: 28px 0;
+.table {
+    width: 100%;
+    border-collapse: collapse;
+	margin: 20px 0;
 }
 
-th {
-	background-color: var(--neutral-color-dark);
-	color: var(--white);
-	font-weight: 500;
+th, td {
+    border: 1px solid var(--neutral-color-light);
+    padding: 8px;
+    text-align: left;
 }
 
-th,
-td {
-	padding: 10px;
-	border: 1px solid var(--neutral-color-light);
-	vertical-align: top;
+thead {
+    background-color: var(--neutral-color-medium); /* Background for header */
+	color: var(--body-color);
 }
 
-th li,
-td li {
-	padding-left: 20px;
+/* tr:nth-child(even) {
+    /background-color: var(--neutral-color-light);
 }
 
-tbody tr:nth-child(odd) {
-	background-color: var(--neutral-color-medium);
-}
+tr:nth-child(odd) {
+    background-color: var(--neutral-color-light); 
+} */
 
 /* End Table Styles */
 
