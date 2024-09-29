@@ -128,6 +128,32 @@
 
 /* BEGIN STYLES */
 
+:root {
+	--primary-color: #f57424;
+	--primary-color-dark: #d86221;
+	--body-color: #1a1a1a;
+	--secondary-color: #737373;
+	--neutral-color-light: #e8e8e880;
+	--neutral-color-medium: #e6e6e6;
+	--neutral-color-dark: #686868;
+	--error-color-light: #fed9db80;
+	--error-color-dark: #fd3a5733;
+	--warning-color-light: #feedaf80;
+	--warning-color-dark: #fbc91633;
+	--white: #fff;
+	--list-color: var(--primary-color);
+	--font-family-primary: 'amplify-regular';
+	--font-family-secondary: 'benton-sans-regular';
+	--font-family-secondary-bold: 'benton-sans-medium';
+	--font-size-xl: calc(var(--font-size) * 2); /* 32px */
+	--font-size-large: calc(var(--font-size) * 1.5); /* 24px */
+	--font-size-medium: calc(var(--font-size) * 1.25); /* 20px */
+	--font-size: 16px;
+	--font-size-small: calc(var(--font-size) * 0.75); /* 12px */
+	--font-size-xsmall: calc(var(--font-size) * .7); /* 11.2px */
+	--font-size-xxsmall: calc(var(--font-size) * .6); /* 9.6px */
+	}
+
 /* Font Styles */
 
 .kv-container {
@@ -135,10 +161,9 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-feature-settings: "kern";
-	color: #4d4d4f;
 	font-kerning: normal;
-	font-size: 16px;
-	font-weight: 400;
+	/* font-size: 16px; */
+	/* font-weight: 400; */
 	letter-spacing: normal;
 	line-height: 1.5;
 	text-align: left;
@@ -152,7 +177,7 @@
 
 b,
 strong {
-	font-weight: 500;
+	font-family: var(--font-family-secondary-bold);
 }
 
 sub,
@@ -162,10 +187,6 @@ sup {
 	line-height: 0;
 	position: relative;
 	vertical-align: baseline;
-}
-
-sub {
-	font-size: 60%;
 }
 
 sup {
@@ -185,42 +206,42 @@ h6,
 h1,
 h2,
 .kv-title {
-	font-family: 'amplify-regular';
+	font-family: var(--font-family-primary);
+	color: var(--body-color);
 }
 
 h1,
 .kv-title {
-	color: #686868;
-	font-size: 32px;
+	font-size: var(--font-size-large);
 }
 
 h2 {
-	color: #f37321;
-	font-size: 24px;
+	font-size: var(--font-size-medium);
 	margin: 48px 0 24px;
 }
 
 h3,
 h4,
 h6,
-h6 {
-	font-family: 'benton-sans-regular';
+p,
+pre {
+	font-family: var(--font-family-secondary);
 }
 
 h3 {
-	font-size: 20px;
+	font-size: var(--font-size-medium);
 	margin: 36px 0 12px;
 }
 
 h4 {
-	font-size: 17px;
+	font-size: calc(var(--font-size) - 1px);
 	margin: 24px 0 12px;
 }
 
 h5,
 h6 {
-	color: #999;
-	font-size: 12px;
+	color: var(--neutral-color-dark);
+	font-size: var(--font-size-ssmall);
 	font-weight: bold;
 	margin: 24px 0 12px;
 	text-transform: uppercase;
@@ -241,13 +262,20 @@ h3+h4 {
 
 p {
 	margin: 0 0 24px;
-	font-family: 'benton-sans-regular', sans-serif;
-}
-
-.kv-summary-container p {
-	color: #737373;
+	color: var(--body-color);
 	font-size: 16px;
 	line-height: 1.5;
+}
+
+.kv-title {
+	line-height: 2.5rem;	
+}
+
+
+.kv-summary-container p {
+	color: var(--secondary-color);
+	font-size: var(--font-size);
+	line-height: 1.53;
 }
 
 /*-------------*/
@@ -292,7 +320,7 @@ ul>li::before {
 
 ul>li::before,
 ol>li:before {
-	color: #f37321;
+	color: var(--list-color);
 }
 
 ol {
@@ -348,13 +376,13 @@ ul li {
 
 hr {
 	border: 0;
-	border-top: 1px solid #e6e6e6;
+	border-top: 1px solid var(--neutral-color-medium);
 	height: 0;
 	margin: 28px 0;
 }
 
 blockquote {
-	border-left: 2px solid #999;
+	border-left: 2px solid var(--neutral-color-dark);
 	margin: 24px 0;
 	padding-left: 30px;
 }
@@ -368,12 +396,12 @@ blockquote> :last-child {
 }
 
 a {
-	color: #f37321;
+	color: var(--primary-color);
 	text-decoration: underline;
 }
 
 a:hover {
-	color: #d86221;
+	color: var(--primary-color);
 	text-decoration: none;
 }
 
@@ -396,8 +424,7 @@ ul li {
 }
 
 pre {
-	font-family: 'benton-sans-regular';
-	font-size: 1rem;
+	font-size: var(--font-size);
 	white-space: nowrap;
 	margin: 0 0 24px;
 }
@@ -405,13 +432,13 @@ pre {
 .button,
 pre a {
 	text-decoration: none;
-	background-color: #f37321;
-	color: #fff;
+	background-color: var(--primary-color);
+	color: var(--white);
 	padding: 10px 30px;
 	border-radius: 30px;
 	display: inline-block;
 	margin: 4px 0;
-	font-size: 1rem;
+	font-size: var(--font-size);
 	font-weight: 500;
 	white-space: nowrap;
 	min-width: 100px;
@@ -421,8 +448,8 @@ pre a {
 
 .button:hover,
 pre a:hover {
-	background-color: #d86221;
-	color: #fff;
+	background-color: var(--primary-color-dark);
+	color: var(--white);
 }
 
 code {
@@ -456,20 +483,20 @@ svg {
 
 table {
 	border-collapse: collapse;
-	font-size: 14px;
+	font-size: calc(var(--font-size) - 2px);
 	margin: 28px 0;
 }
 
 th {
-	background-color: #686868;
-	color: #fff;
+	background-color: var(--neutral-color-dark);
+	color: var(--white);
 	font-weight: 500;
 }
 
 th,
 td {
 	padding: 10px;
-	border: 1px solid #ccc;
+	border: 1px solid var(--neutral-color-light);
 	vertical-align: top;
 }
 
@@ -479,7 +506,7 @@ td li {
 }
 
 tbody tr:nth-child(odd) {
-	background-color: #f2f2f2;
+	background-color: var(--neutral-color-medium);
 }
 
 /* End Table Styles */
@@ -531,8 +558,8 @@ tbody tr:nth-child(odd) {
 
 /* Info Callout */
 .callout-info {
-	background-color: #e8e8e880;
-	border-color: #73737633;
+	background-color: var(--neutral-color-light);
+	border-color: var(--neutral-color-dark);
 }
 
 .callout-info .callout-icon {
@@ -541,8 +568,8 @@ tbody tr:nth-child(odd) {
 
 /* Error Callout */
 .callout-error {
-    background-color: #fed9db80;
-  	border-color: #fd3a5733;
+    background-color: var(--error-color-light);
+  	border-color: var(--error-color-dark);
 }
 
 .callout-error .callout-icon {
@@ -551,8 +578,8 @@ tbody tr:nth-child(odd) {
 
 /* Warning Callout */
 .callout-warning {
-    background-color: #feedaf80;
-    border-color: #fbc91633;
+    background-color: var(--warning-color-light);
+    border-color: var(--warning-color-dark);
 }
 
 .callout-warning .callout-icon {
@@ -624,7 +651,7 @@ details summary::marker {
 }
 
 details[open] summary {
-	color: #f37321;
+	color: var(--primary-color);
 }
 
 details[open] summary::after {
@@ -633,7 +660,7 @@ details[open] summary::after {
 }
 
 details+details summary {
-	border-top: 1px solid #e6e6e6;
+	border-top: 1px solid var(--neutral-color-medium);
 	margin: 0;
 }
 
@@ -673,7 +700,7 @@ iframe {
 	aspect-ratio: 16 / 9;
 	width: 99.99%;
 	height: auto;
-	border: 1px solid #e6e6e6;
+	border: 1px solid var(--neutral-color-medium);
 	margin: 4px auto;
 	display: block;
 }
