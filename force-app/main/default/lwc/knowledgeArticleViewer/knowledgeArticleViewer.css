@@ -1,0 +1,681 @@
+/* Amplify Fonts */
+@font-face {
+	font-family: 'amplify-bold';
+	font-style: normal;
+	font-weight: 700;
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-BoldWEB.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'amplify-bold-italic';
+	font-style: italic;
+	font-weight: 700;
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-BoldItalicWEB.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'amplify-light';
+	font-style: normal;
+	font-weight: 200;
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-LightWEB.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'amplify-light-italic';
+	font-style: italic;
+	font-weight: 200;
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-LightItalicWEB.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'amplify-medium';
+	font-style: normal;
+	font-weight: 500;
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-MediumWEB.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'amplify-medium-italic';
+	font-style: italic;
+	font-weight: 500;
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-MediumItalicWEB.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'amplify-regular';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-RegularWEB.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'amplify-regular-italic';
+	font-style: italic;
+	font-weight: 400;
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-RegularItalicWEB.woff') format('woff');
+}
+
+/* Benton Fonts */
+@font-face {
+	font-family: 'benton-sans-bold';
+	font-style: normal;
+	font-weight: 700;
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'benton-sans-bold-italic';
+	font-style: italic;
+	font-weight: 700;
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-bold-italic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'benton-sans-book';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-book.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'benton-sans-book-italic';
+	font-style: italic;
+	font-weight: 400;
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-book-italic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'benton-sans-light';
+	font-style: normal;
+	font-weight: 200;
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-light.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'benton-sans-light-italic';
+	font-style: italic;
+	font-weight: 200;
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-light-italic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'benton-sans-medium';
+	font-style: normal;
+	font-weight: 500;
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-medium.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'benton-sans-medium-italic';
+	font-style: italic;
+	font-weight: 500;
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-medium-italic.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'benton-sans-regular';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'benton-sans-regular-italic';
+	font-style: italic;
+	font-weight: 400;
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-regular-italic.woff') format('woff');
+}
+
+/* BEGIN STYLES */
+
+/* Font Styles */
+
+.kv-container {
+	max-width: 600px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-feature-settings: "kern";
+	color: #4d4d4f;
+	font-kerning: normal;
+	font-size: 16px;
+	font-weight: 400;
+	letter-spacing: normal;
+	line-height: 1.5;
+	text-align: left;
+	text-rendering: optimizeLegibility;
+	word-break: break-word;
+}
+
+.kv-container :first-child {
+	margin-top: 0;
+}
+
+b,
+strong {
+	font-weight: 500;
+}
+
+sub,
+sup {
+	-webkit-font-smoothing: subpixel-antialiased;
+	font-size: 70%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	font-size: 60%;
+}
+
+sup {
+	top: -.5em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.kv-title {
+	line-height: 1.25;
+}
+
+h1,
+h2,
+.kv-title {
+	font-family: 'amplify-regular';
+}
+
+h1,
+.kv-title {
+	color: #686868;
+	font-size: 32px;
+}
+
+h2 {
+	color: #f37321;
+	font-size: 24px;
+	margin: 48px 0 24px;
+}
+
+h3,
+h4,
+h6,
+h6 {
+	font-family: 'benton-sans-regular';
+}
+
+h3 {
+	font-size: 20px;
+	margin: 36px 0 12px;
+}
+
+h4 {
+	font-size: 17px;
+	margin: 24px 0 12px;
+}
+
+h5,
+h6 {
+	color: #999;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 24px 0 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+h1+h2 {
+	margin-top: 36px;
+}
+
+h2+h3 {
+	margin-top: 24px;
+}
+
+h3+h4 {
+	margin-top: 24px;
+}
+
+p {
+	margin: 0 0 24px;
+	font-family: 'benton-sans-regular', sans-serif;
+}
+
+.kv-summary-container p {
+	color: #737373;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+/*-------------*/
+/* List Styles */
+/*-------------*/
+
+ul,
+ol {
+	margin: 0 0 24px;
+	padding: 0;
+	list-style: none !important;
+}
+
+li {
+	position: relative;
+	padding-left: 30px;
+	margin-top: 10px;
+}
+
+li:first-child {
+	margin-top: 0;
+}
+
+
+ul ul li:first-child {
+	margin-top: 10px;
+}
+
+li::before {
+	font-weight: 500;
+	left: 0;
+	position: absolute;
+	text-align: left;
+	top: 0;
+	width: 1.75rem;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+ul>li::before {
+	content: "•";
+}
+
+ul>li::before,
+ol>li:before {
+	color: #f37321;
+}
+
+ol {
+	counter-reset: decimal-counter;
+}
+
+ol>li {
+	counter-increment: decimal-counter;
+}
+
+ol>li:before {
+	content: counter(decimal-counter) ". ";
+}
+
+ol[style="list-style-type: upper-alpha;"]>li::before {
+	content: counter(decimal-counter, upper-alpha) ". ";
+}
+
+ol[style="list-style-type: lower-alpha;"]>li::before {
+	content: counter(decimal-counter, lower-alpha) ". ";
+}
+
+ol[style="list-style-type: upper-roman;"]>li::before {
+	content: counter(decimal-counter, upper-roman) ". ";
+}
+
+ol[style="list-style-type: lower-roman;"]>li::before {
+	content: counter(decimal-counter, lower-roman) ". ";
+}
+
+ol[style="list-style-type: lower-greek;"]>li::before {
+	background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23f37321' d='m173.898 439.404-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z'/%3E%3C/svg%3E") 50% / cover no-repeat;
+	content: "";
+	height: 1.125rem;
+	left: 0;
+	position: absolute;
+	top: .1875rem;
+	width: 1.125rem;
+}
+
+ol a,
+ul a {
+	font-weight: 500;
+}
+
+ul li {
+	list-style-type: none !important;
+}
+
+/* End List Styles */
+
+/* Miscellaneous Styles */
+
+hr {
+	border: 0;
+	border-top: 1px solid #e6e6e6;
+	height: 0;
+	margin: 28px 0;
+}
+
+blockquote {
+	border-left: 2px solid #999;
+	margin: 24px 0;
+	padding-left: 30px;
+}
+
+blockquote> :first-child {
+	margin-top: 0;
+}
+
+blockquote> :last-child {
+	margin-bottom: 0;
+}
+
+a {
+	color: #f37321;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #d86221;
+	text-decoration: none;
+}
+
+p a,
+ol a,
+ul a,
+table a {
+	font-weight: 500;
+}
+
+h1 a,
+h2 a,
+h1 s,
+h2 s {
+	text-decoration-thickness: 2px !important;
+}
+
+ul li {
+	list-style-type: none !important;
+}
+
+pre {
+	font-family: 'benton-sans-regular';
+	font-size: 1rem;
+	white-space: nowrap;
+	margin: 0 0 24px;
+}
+
+.button,
+pre a {
+	text-decoration: none;
+	background-color: #f37321;
+	color: #fff;
+	padding: 10px 30px;
+	border-radius: 30px;
+	display: inline-block;
+	margin: 4px 0;
+	font-size: 1rem;
+	font-weight: 500;
+	white-space: nowrap;
+	min-width: 100px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.button:hover,
+pre a:hover {
+	background-color: #d86221;
+	color: #fff;
+}
+
+code {
+    white-space: pre-wrap; /* Allows the text to wrap */
+    word-wrap: break-word; /* Breaks long words if necessary */
+}
+
+/* End Miscellaneous Styles */
+
+/* Start Media Styles */
+
+img,
+svg {
+	max-width: 100%;
+	height: auto;
+	margin: 4px auto;
+	vertical-align: bottom;
+}
+
+@media screen and (max-width: 760px) {
+
+	img,
+	svg {
+		width: 100%;
+	}
+}
+
+/* End Media Styles */
+
+/* Start Table Styles */
+
+table {
+	border-collapse: collapse;
+	font-size: 14px;
+	margin: 28px 0;
+}
+
+th {
+	background-color: #686868;
+	color: #fff;
+	font-weight: 500;
+}
+
+th,
+td {
+	padding: 10px;
+	border: 1px solid #ccc;
+	vertical-align: top;
+}
+
+th li,
+td li {
+	padding-left: 20px;
+}
+
+tbody tr:nth-child(odd) {
+	background-color: #f2f2f2;
+}
+
+/* End Table Styles */
+
+/* Start Callout Styles */
+
+/* Base Callout Styles */
+.callout {
+    padding: 16px 20px; /* Adjust padding to control top, right, bottom, left */
+    border-radius: 10px;
+    border: 1px solid;
+    margin: 16px 0;
+    position: relative; /* Ensure the icon is positioned relative to the callout */
+}
+
+/* Remove unnecessary margin from the first and last child */
+.callout > :first-child {
+    margin-top: 0; /* Ensure no extra margin at the top */
+}
+
+.callout > :last-child {
+    margin-bottom: 0; /* Ensure no extra margin at the bottom */
+}
+
+/* Callout Icon anchored to the top-left */
+.callout-icon {
+    width: 28px;
+    height: 28px;
+    position: absolute; /* Positioning the icon absolutely */
+    top: 20px; /* Adjust the distance from the top */
+    left: 20px; /* Adjust the distance from the left */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Ensure the callout text is to the right of the icon if it exists */
+.callout p {
+    margin-left: 50px; /* Offset the text so it starts after the icon */
+    margin-bottom: 0; /* Prevent extra space at the bottom */
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* If there's no icon, align text normally without the margin-left */
+.callout:not(:has(.callout-icon)) p {
+    margin-left: 0; /* Remove the margin when there's no icon */
+}
+
+/* Info Callout */
+.callout-info {
+	background-color: #e8e8e880;
+	border-color: #73737633;
+}
+
+.callout-info .callout-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='28' width='28' viewBox='0 0 520 520' fill='%234d4d4f'%3E%3Cpath d='M260 20a240 240 0 1 0 0 480 240 240 0 1 0 0-480zm0 121c17 0 30 13 30 30s-13 30-30 30-30-13-30-30 13-30 30-30zm50 210c0 5-4 9-10 9h-80c-5 0-10-3-10-9v-20c0-5 4-11 10-11 5 0 10-3 10-9v-40c0-5-4-11-10-11-5 0-10-3-10-9v-20c0-5 4-11 10-11h60c5 0 10 5 10 11v80c0 5 4 9 10 9 5 0 10 5 10 11z'/%3E%3C/svg%3E");
+}
+
+/* Error Callout */
+.callout-error {
+    background-color: #fed9db80;
+  	border-color: #fd3a5733;
+}
+
+.callout-error .callout-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='52' width='52' viewBox='0 0 520 520' fill='%234d4d4f'%3E%3Cpath d='M260 20C128 20 20 128 20 260s108 240 240 240 240-108 240-240S392 20 260 20zM80 260a180 180 0 0 1 284-147L113 364a176 176 0 0 1-33-104zm180 180c-39 0-75-12-104-33l251-251a180 180 0 0 1-147 284z'/%3E%3C/svg%3E");
+}
+
+/* Warning Callout */
+.callout-warning {
+    background-color: #feedaf80;
+    border-color: #fbc91633;
+}
+
+.callout-warning .callout-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='52' width='52' viewBox='0 0 520 520' fill='%234d4d4f'%3E%3Cpath d='M514 425 285 55a28 28 0 0 0-50 0L6 425c-14 23 0 55 25 55h458c25 0 40-32 25-55zm-254-25c-17 0-30-13-30-30s13-30 30-30 30 13 30 30-13 30-30 30zm30-90c0 6-4 10-10 10h-40c-6 0-10-4-10-10V180c0-6 4-10 10-10h40c6 0 10 4 10 10v130z'/%3E%3C/svg%3E");
+}
+
+@media screen and (max-width:599px) {
+	.callout {
+		padding: 15px;
+	}
+
+	.callout-icon {
+		padding-left: 65px;
+	}
+
+	.callout-info.callout-icon::before,
+	.callout-error.callout-icon::before,
+	.callout-warning.callout-icon::before {
+		background-position: center 20px;
+	}
+}
+
+/* End Callout Styles*/
+
+
+/* Start Accordion Styles */
+
+details {
+	margin: -18px 0 -18px;
+}
+
+details+details {
+	margin: 18px 0 -18px;
+}
+
+details> :last-child {
+	padding-bottom: 18px;
+}
+
+details summary {
+	counter-increment: none;
+	cursor: pointer;
+	display: list-item;
+	list-style: none;
+	list-style-type: none;
+	padding: 18px 25px 18px 0;
+	margin: -18px 0 0;
+	position: relative;
+	font-weight: 500;
+	border-radius: 3px;
+}
+
+details summary::after {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13.002 7.002'%3E%3Cpath d='m12.855.146.001.002a.5.5 0 0 1 0 .706l-6 6-.002.001a.5.5 0 0 1-.707 0l-6-6A.501.501 0 1 1 .855.148l5.647 5.647L12.147.147h.001a.5.5 0 0 1 .707 0' style='fill:%23999;fill-rule:evenodd'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-size: 1.25rem;
+	background-position: center;
+	content: '';
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 1.25rem;
+}
+
+details summary::-webkit-details-marker,
+details summary::marker {
+	display: none;
+}
+
+details[open] summary {
+	color: #f37321;
+}
+
+details[open] summary::after {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13.002 7.002'%3E%3Cpath d='M.147 6.855a.5.5 0 0 1 0-.708l6-6h.001a.5.5 0 0 1 .707 0l6 6a.501.501 0 1 1-.708.708L6.5 1.208.855 6.855a.5.5 0 0 1-.708 0' style='fill:%23f37321;fill-rule:evenodd'/%3E%3C/svg%3E");
+	content: '';
+}
+
+details+details summary {
+	border-top: 1px solid #e6e6e6;
+	margin: 0;
+}
+
+/* Accordion with heading */
+
+details summary h2,
+details summary h3,
+details summary h4 {
+	margin: 18px 0 0;
+}
+
+details summary:has(h2)::after,
+details summary:has(h3)::after,
+details summary:has(h4)::after {
+	top: 9px;
+}
+
+details+details summary:has(h2)::after,
+details+details summary:has(h3)::after,
+details+details summary:has(h4)::after {
+	top: 0;
+}
+
+details+details summary h2,
+details+details summary h3,
+details+details summary h4 {
+	margin: 0;
+}
+
+/* End Accordion Styles */
+
+/* Start YouTube embed */
+
+iframe[src*="youtube"],
+iframe[src*="youtu.be"],
+iframe {
+	aspect-ratio: 16 / 9;
+	width: 99.99%;
+	height: auto;
+	border: 1px solid #e6e6e6;
+	margin: 4px auto;
+	display: block;
+}
+
+/* End Youtube embed */
