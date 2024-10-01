@@ -540,6 +540,11 @@ tr:nth-child(odd) {
     background-position: center;
 }
 
+.callout-icon[alt]::before {
+    content: attr(alt); /* Add alt-text for accessibility */
+    display: none; /* Hide visually, available for screen readers */
+}
+
 /* Ensure the callout text is to the right of the icon if it exists */
 .callout p {
     margin-left: 50px; /* Offset the text so it starts after the icon */
@@ -554,6 +559,12 @@ tr:nth-child(odd) {
 }
 
 /* Info Callout */
+.callout-generic {
+	background-color: var(--neutral-color-light);
+	border-color: var(--neutral-color-dark);
+}
+
+/* Info Callout */
 .callout-info {
 	background-color: var(--neutral-color-light);
 	border-color: var(--neutral-color-dark);
@@ -561,6 +572,7 @@ tr:nth-child(odd) {
 
 .callout-info .callout-icon {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='28' width='28' viewBox='0 0 520 520' fill='%234d4d4f'%3E%3Cpath d='M260 20a240 240 0 1 0 0 480 240 240 0 1 0 0-480zm0 121c17 0 30 13 30 30s-13 30-30 30-30-13-30-30 13-30 30-30zm50 210c0 5-4 9-10 9h-80c-5 0-10-3-10-9v-20c0-5 4-11 10-11 5 0 10-3 10-9v-40c0-5-4-11-10-11-5 0-10-3-10-9v-20c0-5 4-11 10-11h60c5 0 10 5 10 11v80c0 5 4 9 10 9 5 0 10 5 10 11z'/%3E%3C/svg%3E");
+	alt: "Info";
 }
 
 /* Error Callout */
@@ -571,6 +583,8 @@ tr:nth-child(odd) {
 
 .callout-error .callout-icon {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='52' width='52' viewBox='0 0 520 520' fill='%234d4d4f'%3E%3Cpath d='M260 20C128 20 20 128 20 260s108 240 240 240 240-108 240-240S392 20 260 20zM80 260a180 180 0 0 1 284-147L113 364a176 176 0 0 1-33-104zm180 180c-39 0-75-12-104-33l251-251a180 180 0 0 1-147 284z'/%3E%3C/svg%3E");
+	alt: "Error";
+
 }
 
 /* Warning Callout */
@@ -583,20 +597,28 @@ tr:nth-child(odd) {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='52' width='52' viewBox='0 0 520 520' fill='%234d4d4f'%3E%3Cpath d='M514 425 285 55a28 28 0 0 0-50 0L6 425c-14 23 0 55 25 55h458c25 0 40-32 25-55zm-254-25c-17 0-30-13-30-30s13-30 30-30 30 13 30 30-13 30-30 30zm30-90c0 6-4 10-10 10h-40c-6 0-10-4-10-10V180c0-6 4-10 10-10h40c6 0 10 4 10 10v130z'/%3E%3C/svg%3E");
 }
 
-@media screen and (max-width:599px) {
-	.callout {
-		padding: 15px;
-	}
+/* Generic Callout */
+.callout-warning {
+    background-color: var(--warning-color-light);
+    border-color: var(--warning-color-dark);
+}
 
-	.callout-icon {
-		padding-left: 65px;
-	}
+/* Mobile Responsive Styles */
+@media screen and (max-width: 599px) {
+    .callout {
+        padding: 12px 15px;
+    }
 
-	.callout-info.callout-icon::before,
-	.callout-error.callout-icon::before,
-	.callout-warning.callout-icon::before {
-		background-position: center 20px;
-	}
+    .callout-icon {
+        width: 21px; /* Shrink the icon to 75% of default size */
+        height: 21px;
+        left: 15px; /* Adjust position to match the smaller padding */
+        top: 15px;
+    }
+
+    .callout p {
+        margin-left: 40px; /* Adjust text margin for smaller screens */
+    }
 }
 
 /* End Callout Styles*/
@@ -703,3 +725,76 @@ iframe {
 }
 
 /* End Youtube embed */
+
+/* Knowledge Table of Contentents - These styles update the Collection articles. */
+.kb-toc {
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 12px;
+    background-color: white;
+    width: 100%; /* Make it responsive by default */
+    max-width: 960px !important; /* Ensure it doesn't exceed 960px */
+    box-sizing: border-box; /* Ensure padding is included in the element's width */
+    margin: 0 auto; /* Center it within the available space */
+}
+  
+.kb-toc h2 {
+	color: #1a1a1a;
+	font-family: var(--font-family-secondary-bold);
+	font-size: 22px;
+	font-weight: bold;
+	position: relative; /* Needed for the absolute positioning of the border */
+	border-bottom: 1px solid #e6e6e6;
+	margin: 0 12px 12px 12px; 
+    padding: 12px 0 24px 0;
+  }
+  
+ 
+.kb-toc li::before {
+	  display: none;
+	  padding-left: 0px;
+	  padding: 0;
+  }
+
+.kb-toc ul,
+.kb-toc li {
+	padding-left: 0px;
+	padding: 0;
+  }
+  
+.kb-toc ul li {
+	position: relative; /* This allows absolute positioning within the <li> */
+	  padding-left: 0px;
+  }
+  
+.kb-toc ul li:last-child {
+	border-bottom: none;
+  }
+  
+.kb-toc ul li a {
+	color: #1a1a1a;
+	text-decoration: none;
+	font-size: 18px;
+	display: block;
+	padding: 15px;
+	border-radius: 8px;
+	padding-right: 30px; /* Extra padding for the arrow */
+	transition: background-color 0.3s ease-linear, color 0.3s ease-linear;
+	position: relative; /* Ensure relative positioning for the pseudo-element */
+  }
+  
+  .kb-toc ul li a:hover {
+	color: #1a1a1a;
+	background-color: #f57424; /* Fallback for browsers that don't support rgba */
+	background-color: rgba(245, 116, 36, 0.1); /* Transparent background color */
+  }
+  
+  .kb-toc ul li a::after {
+	content: '›';
+	color: #f37c20;
+	font-size: 28px;
+	position: absolute;
+	right: 10px; /* Moved to 10px from the edge */
+	top: 50%;
+	transform: translateY(-50%);
+  }
