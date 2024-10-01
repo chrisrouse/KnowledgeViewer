@@ -540,11 +540,6 @@ tr:nth-child(odd) {
     background-position: center;
 }
 
-.callout-icon[alt]::before {
-    content: attr(alt); /* Add alt-text for accessibility */
-    display: none; /* Hide visually, available for screen readers */
-}
-
 /* Ensure the callout text is to the right of the icon if it exists */
 .callout p {
     margin-left: 50px; /* Offset the text so it starts after the icon */
@@ -554,8 +549,12 @@ tr:nth-child(odd) {
 }
 
 /* If there's no icon, align text normally without the margin-left */
-.callout:not(:has(.callout-icon)) p {
-    margin-left: 0; /* Remove the margin when there's no icon */
+.callout p {
+    margin-left: 0; /* Default for when there's no icon */
+}
+
+.callout-icon + p {
+    margin-left: 50px; /* Add margin if .callout-icon is present */
 }
 
 /* Info Callout */
@@ -572,7 +571,6 @@ tr:nth-child(odd) {
 
 .callout-info .callout-icon {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='28' width='28' viewBox='0 0 520 520' fill='%234d4d4f'%3E%3Cpath d='M260 20a240 240 0 1 0 0 480 240 240 0 1 0 0-480zm0 121c17 0 30 13 30 30s-13 30-30 30-30-13-30-30 13-30 30-30zm50 210c0 5-4 9-10 9h-80c-5 0-10-3-10-9v-20c0-5 4-11 10-11 5 0 10-3 10-9v-40c0-5-4-11-10-11-5 0-10-3-10-9v-20c0-5 4-11 10-11h60c5 0 10 5 10 11v80c0 5 4 9 10 9 5 0 10 5 10 11z'/%3E%3C/svg%3E");
-	alt: "Info";
 }
 
 /* Error Callout */
@@ -583,7 +581,6 @@ tr:nth-child(odd) {
 
 .callout-error .callout-icon {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='52' width='52' viewBox='0 0 520 520' fill='%234d4d4f'%3E%3Cpath d='M260 20C128 20 20 128 20 260s108 240 240 240 240-108 240-240S392 20 260 20zM80 260a180 180 0 0 1 284-147L113 364a176 176 0 0 1-33-104zm180 180c-39 0-75-12-104-33l251-251a180 180 0 0 1-147 284z'/%3E%3C/svg%3E");
-	alt: "Error";
 
 }
 
