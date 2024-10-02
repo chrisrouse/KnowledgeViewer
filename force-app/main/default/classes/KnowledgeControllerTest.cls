@@ -3,32 +3,42 @@ public class KnowledgeControllerTest {
 
     @isTest
     static void testGetKnowledgeArticleByRecordId() {
-        // Assuming Knowledge__kav data exists in your org
-        Knowledge__kav existingArticle = [SELECT Id FROM Knowledge__kav LIMIT 1];
+        // Create a Knowledge__kav record
+        Knowledge__kav article = new Knowledge__kav(
+            Title = 'Test Article',
+            Summary = 'This is a test article summary',
+            UrlName = 'test-article-url'
+        );
+        insert article;
 
         Test.startTest();
         // Call the KnowledgeController method
-        Knowledge__kav result = KnowledgeController.getKnowledgeArticle(existingArticle.Id, null);
+        Knowledge__kav result = KnowledgeController.getKnowledgeArticle(article.Id, null);
         Test.stopTest();
 
         // Verify the results
         System.assertNotEquals(null, result, 'The result should not be null.');
-        System.assertEquals(existingArticle.Id, result.Id, 'The result Id should match the existing article Id.');
+        System.assertEquals(article.Id, result.Id, 'The result Id should match the created article Id.');
     }
 
     @isTest
     static void testGetKnowledgeArticleByUrlName() {
-        // Query an existing Knowledge__kav using UrlName
-        Knowledge__kav existingArticle = [SELECT UrlName FROM Knowledge__kav WHERE UrlName != null LIMIT 1];
+        // Create a Knowledge__kav record
+        Knowledge__kav article = new Knowledge__kav(
+            Title = 'Test Article',
+            Summary = 'This is a test article summary',
+            UrlName = 'test-article-url'
+        );
+        insert article;
 
         Test.startTest();
         // Call the KnowledgeController method
-        Knowledge__kav result = KnowledgeController.getKnowledgeArticle(null, existingArticle.UrlName);
+        Knowledge__kav result = KnowledgeController.getKnowledgeArticle(null, article.UrlName);
         Test.stopTest();
 
         // Verify the results
         System.assertNotEquals(null, result, 'The result should not be null.');
-        System.assertEquals(existingArticle.UrlName, result.UrlName, 'The result UrlName should match the existing article UrlName.');
+        System.assertEquals(article.UrlName, result.UrlName, 'The result UrlName should match the created article UrlName.');
     }
 
     @isTest
