@@ -5,13 +5,24 @@
     <description>This shows a rich-text formatted Knowledge Article.</description>
     <targets>
         <target>lightning__RecordPage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
     </targets>
     <targetConfigs>
+        <!-- Configuration for Record Pages (recordId automatically provided) -->
         <targetConfig targets="lightning__RecordPage">
+            <!-- No need to include recordId property here -->
             <supportedFormFactors>
                 <supportedFormFactor type="Small"/>
                 <supportedFormFactor type="Large"/>
             </supportedFormFactors>
+        </targetConfig>
+
+        <!-- Configuration for Community Pages -->
+        <targetConfig targets="lightningCommunity__Default">
+            <!-- Expose recordId and urlName with default values for Community Pages -->
+            <property name="recordId" type="String" label="Record ID" default="{!recordId}" description="Knowledge Article Record ID"/>
+            <property name="urlName" type="String" label="URL Name" default="{!recordURL}" required="true" description="Knowledge Article URL Name"/>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

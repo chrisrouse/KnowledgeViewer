@@ -3,56 +3,64 @@
 	font-family: 'amplify-bold';
 	font-style: normal;
 	font-weight: 700;
-	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-BoldWEB.woff') format('woff');
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-BoldWEB.woff') format('woff'),
+	url('/customerportal/s/sfsites/c/resource/KnowledgeFonts/knowledge-fonts/Amplify-BoldWEB.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'amplify-bold-italic';
 	font-style: italic;
 	font-weight: 700;
-	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-BoldItalicWEB.woff') format('woff');
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-BoldItalicWEB.woff') format('woff'),
+	url('/customerportal/s/sfsites/c/resource/KnowledgeFonts/knowledge-fonts/Amplify-BoldItalicWEB.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'amplify-light';
 	font-style: normal;
 	font-weight: 200;
-	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-LightWEB.woff') format('woff');
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-LightWEB.woff') format('woff'),
+	url('/customerportal/s/sfsites/c/resource/KnowledgeFonts/knowledge-fonts/Amplify-LightWEB.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'amplify-light-italic';
 	font-style: italic;
 	font-weight: 200;
-	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-LightItalicWEB.woff') format('woff');
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-LightItalicWEB.woff') format('woff'),
+	url('/customerportal/s/sfsites/c/resource/KnowledgeFonts/knowledge-fonts/Amplify-LightItalicWEB.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'amplify-medium';
 	font-style: normal;
 	font-weight: 500;
-	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-MediumWEB.woff') format('woff');
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-MediumWEB.woff') format('woff'),
+	url('/customerportal/s/sfsites/c/resource/KnowledgeFonts/knowledge-fonts/Amplify-MediumWEB.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'amplify-medium-italic';
 	font-style: italic;
 	font-weight: 500;
-	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-MediumItalicWEB.woff') format('woff');
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-MediumItalicWEB.woff') format('woff'),
+	url('/customerportal/s/sfsites/c/resource/KnowledgeFonts/knowledge-fonts/Amplify-MediumItalicWEB.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'amplify-regular';
 	font-style: normal;
 	font-weight: 400;
-	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-RegularWEB.woff') format('woff');
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-RegularWEB.woff') format('woff'),
+	url('/customerportal/s/sfsites/c/resource/KnowledgeFonts/knowledge-fonts/Amplify-RegularWEB.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'amplify-regular-italic';
 	font-style: italic;
 	font-weight: 400;
-	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-RegularItalicWEB.woff') format('woff');
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/Amplify-RegularItalicWEB.woff') format('woff'),
+	url('/customerportal/s/sfsites/c/resource/KnowledgeFonts/knowledge-fonts/Amplify-RegularItalicWEB.woff') format('woff');
 }
 
 /* Benton Fonts */
@@ -60,70 +68,80 @@
 	font-family: 'benton-sans-bold';
 	font-style: normal;
 	font-weight: 700;
-	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-bold.woff') format('woff');
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-bold.woff') format('woff'),
+	url('/customerportal/s/sfsites/c/resource/KnowledgeFonts/knowledge-fonts/benton-sans-bold.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'benton-sans-bold-italic';
 	font-style: italic;
 	font-weight: 700;
-	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-bold-italic.woff') format('woff');
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-bold-italic.woff') format('woff'),
+	url('/customerportal/s/sfsites/c/resource/KnowledgeFonts/knowledge-fonts/benton-sans-bold-italic.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'benton-sans-book';
 	font-style: normal;
 	font-weight: 400;
-	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-book.woff') format('woff');
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-book.woff') format('woff'),
+	url('/customerportal/s/sfsites/c/resource/KnowledgeFonts/knowledge-fonts/benton-sans-book.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'benton-sans-book-italic';
 	font-style: italic;
 	font-weight: 400;
-	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-book-italic.woff') format('woff');
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-book-italic.woff') format('woff'),
+		url('/customerportal/s/sfsites/c/resource/KnowledgeFonts/knowledge-fonts/benton-sans-book-italic.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'benton-sans-light';
 	font-style: normal;
 	font-weight: 200;
-	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-light.woff') format('woff');
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-light.woff') format('woff'),
+		url('/customerportal/s/sfsites/c/resource/KnowledgeFonts/knowledge-fonts/benton-sans-light.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'benton-sans-light-italic';
 	font-style: italic;
 	font-weight: 200;
-	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-light-italic.woff') format('woff');
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-light-italic.woff') format('woff'),
+		url('/customerportal/s/sfsites/c/resource/KnowledgeFonts/knowledge-fonts/benton-sans-light-italic.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'benton-sans-medium';
 	font-style: normal;
 	font-weight: 500;
-	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-medium.woff') format('woff');
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-medium.woff') format('woff'),
+		url('/customerportal/s/sfsites/c/resource/KnowledgeFonts/knowledge-fonts/benton-sans-medium.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'benton-sans-medium-italic';
 	font-style: italic;
 	font-weight: 500;
-	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-medium-italic.woff') format('woff');
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-medium-italic.woff') format('woff'),
+		url('/customerportal/s/sfsites/c/resource/KnowledgeFonts/knowledge-fonts/benton-sans-medium-italic.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'benton-sans-regular';
 	font-style: normal;
 	font-weight: 400;
-	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-regular.woff') format('woff');
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-regular.woff') format('woff'),
+		url('/customerportal/s/sfsites/c/resource/KnowledgeFonts/knowledge-fonts/benton-sans-regular.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'benton-sans-regular-italic';
 	font-style: italic;
 	font-weight: 400;
-	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-regular-italic.woff') format('woff');
+	src: url('/resource/KnowledgeFonts/knowledge-fonts/benton-sans-regular-italic.woff') format('woff'),
+		url('/customerportal/s/sfsites/c/resource/KnowledgeFonts/knowledge-fonts/benton-sans-regular-italic.woff') format('woff');
 }
 
 /* BEGIN STYLES */
@@ -153,6 +171,14 @@
 	--font-size-xsmall: calc(var(--font-size) * .7); /* 11.2px */
 	--font-size-xxsmall: calc(var(--font-size) * .6); /* 9.6px */
 	}
+
+
+/* Overrides */
+article.slds-card {
+	border: none;
+	padding: 0;
+	box-shadow: none;
+}
 
 /* Font Styles */
 

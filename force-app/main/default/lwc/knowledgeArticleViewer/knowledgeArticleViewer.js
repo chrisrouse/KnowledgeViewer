@@ -1,60 +1,59 @@
-import { LightningElement, api, wire } from 'lwc';
+import { LightningElement, api } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
+import getKnowledgeArticle from '@salesforce/apex/KnowledgeController.getKnowledgeArticle';
 
 export default class KnowledgeComponent extends LightningElement {
-    @api recordId;  // Declare recordId as an @api property
-    @api urlName;   // Declare urlName as an @api property (if needed for future use)
-    
+    @api recordId;
+    @api urlName;
+
     strTitle;
     strSummary;
     strContent;
 
-    // Use getRecord to fetch article by recordId
-    @wire(getRecord, {
-        recordId: '$recordId',
-        fields: [
-            'Knowledge__kav.Title',
-            'Knowledge__kav.Summary',
-            'Knowledge__kav.Article_Details__c'
-        ]
-    })
-    wiredRecord({ error, data }) {
-        if (data) {
-            this.setFields(data);
-        } else if (error) {
-            this.handleError(error);
+    connectedCallback() {
+        // If no recordId or urlName is passed, it will use the prefilled default text values
+        if (this.recordId || this.urlName) {
+            this.fetchKnowledgeArticle();
+        } else {
+            this.injectContent(); // Prefill with {!recordId} and {!recordURL} as text
         }
     }
 
-    // Set the fields for the component
+    fetchKnowledgeArticle() {
+        getKnowledgeArticle({ recordId: this.recordId, urlName: this.urlName })
+            .then(data => {
+                if (data) {
+                    this.setFields(data);
+                } else {
+                    this.handleError(new Error('No data found for the specified record or URL.'));
+                }
+            })
+            .catch(error => {
+                this.handleError(error);
+            });
+    }
+
     setFields(data) {
-        this.strTitle = getFieldValue(data, 'Knowledge__kav.Title');
-        this.strSummary = getFieldValue(data, 'Knowledge__kav.Summary');
-        this.strContent = getFieldValue(data, 'Knowledge__kav.Article_Details__c');
+        this.strTitle = data.Title;
+        this.strSummary = data.Summary;
+        this.strContent = data.Article_Details__c;
+
         this.injectContent();
     }
 
-    // Inject content into the DOM
     injectContent() {
         const contentOutput = this.template.querySelector('.content-output');
-        if (contentOutput && this.strContent) {
-            contentOutput.innerHTML = this.strContent;
+        if (contentOutput) {
+            contentOutput.innerHTML = this.strContent || ''; 
         }
     }
 
-    // Ensure content is injected after rendering
-    renderedCallback() {
-        this.injectContent();
-    }
-
-    // Handle errors
     handleError(error) {
         console.error('Error:', error);
         this.dispatchEvent(
             new ShowToastEvent({
-                title: 'Error loading record',
-                message: 'There was a problem loading the article.',
+                title: 'Error loading article',
+                message: error.message || 'There was a problem loading the article.',
                 variant: 'error',
             })
         );
