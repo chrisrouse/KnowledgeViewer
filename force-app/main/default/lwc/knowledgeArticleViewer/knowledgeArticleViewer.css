@@ -163,6 +163,11 @@
 	--font-family-primary: 'amplify-regular';
 	--font-family-secondary: 'benton-sans-regular';
 	--font-family-secondary-bold: 'benton-sans-medium';
+
+	--amplify: 'amplify-regular';
+	--benton: 'benton-sans-regular';
+	--benton-bold: 'benton-sans-medium';
+
 	--font-size-xl: calc(var(--font-size) * 2); /* 32px */
 	--font-size-large: calc(var(--font-size) * 1.5); /* 24px */
 	--font-size-medium: calc(var(--font-size) * 1.25); /* 20px */
@@ -174,11 +179,6 @@
 
 
 /* Overrides */
-article.slds-card {
-	border: none;
-	padding: 0;
-	box-shadow: none;
-}
 
 /* Font Styles */
 
@@ -232,7 +232,7 @@ h6,
 h1,
 h2,
 .kv-title {
-	font-family: var(--font-family-primary);
+	font-family: var(--amplify);
 	color: var(--body-color);
 }
 
@@ -251,7 +251,7 @@ h4,
 h6,
 p,
 pre {
-	font-family: var(--font-family-secondary);
+	font-family: var(--benton);
 }
 
 h3 {
