@@ -183,7 +183,8 @@
 /* Font Styles */
 
 .kv-container {
-	max-width: 640px;
+	width: 100%;
+	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-feature-settings: "kern";

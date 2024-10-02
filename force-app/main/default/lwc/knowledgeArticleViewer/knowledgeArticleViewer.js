@@ -5,17 +5,31 @@ import getKnowledgeArticle from '@salesforce/apex/KnowledgeController.getKnowled
 export default class KnowledgeComponent extends LightningElement {
     @api recordId;
     @api urlName;
+    @api articleWidth; // Removed default value for articleWidth
 
     strTitle;
     strSummary;
     strContent;
 
+    // Lifecycle hook: Called when the component has been rendered in the DOM
+    renderedCallback() {
+        this.updateArticleWidth(); // Update width after the DOM is rendered
+    }
+
+    // Update the max-width of .kv-container
+    updateArticleWidth() {
+        const kvContainer = this.template.querySelector('.kv-container');
+        if (kvContainer && this.articleWidth) {
+            kvContainer.style.maxWidth = this.articleWidth; // Dynamically set the max-width
+        }
+    }
+
     connectedCallback() {
-        // If no recordId or urlName is passed, it will use the prefilled default text values
+        // Fetch the article data
         if (this.recordId || this.urlName) {
             this.fetchKnowledgeArticle();
         } else {
-            this.injectContent(); // Prefill with {!recordId} and {!recordURL} as text
+            this.injectContent();
         }
     }
 
