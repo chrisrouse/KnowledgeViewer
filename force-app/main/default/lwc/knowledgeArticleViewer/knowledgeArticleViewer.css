@@ -509,6 +509,12 @@ table {
 	margin: 20px 0;
 }
 
+td {
+    word-wrap: break-word;
+    word-break: break-all; /* Breaks words at arbitrary points */
+    white-space: normal; /* Allows content to wrap */
+}
+
 th, td {
     border: 1px solid var(--neutral-color-medium);
     padding: 8px;
