@@ -587,8 +587,8 @@ tr:nth-child(odd) {
 
 /* Info Callout */
 .callout-generic {
-	background-color: var(--neutral-color-light);
-	border-color: var(--neutral-color-dark);
+	background-color: #fff;
+	border-color: var(--neutral-color-light);
 }
 
 /* Info Callout */
