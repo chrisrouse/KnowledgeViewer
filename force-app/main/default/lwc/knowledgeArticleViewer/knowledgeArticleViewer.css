@@ -178,7 +178,7 @@
 /* Font Styles */
 
 .kv-container {
-	width: 100%;
+	width: 640px;
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -540,7 +540,7 @@ tr:nth-child(odd) {
 
 /* Base Callout Styles */
 .callout {
-    padding: 16px 20px; /* Adjust padding to control top, right, bottom, left */
+    padding: 20px; /* Adjust padding to control top, right, bottom, left */
     border-radius: 10px;
     border: 1px solid;
     margin: 16px 0;
@@ -561,7 +561,7 @@ tr:nth-child(odd) {
     width: 28px;
     height: 28px;
     position: absolute; /* Positioning the icon absolutely */
-    top: 20px; /* Adjust the distance from the top */
+    top: 18px; /* Adjust the distance from the top */
     left: 20px; /* Adjust the distance from the left */
     background-size: contain;
     background-repeat: no-repeat;
