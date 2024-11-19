@@ -178,7 +178,7 @@
 /* Font Styles */
 
 .kv-container {
-	width: 640px;
+	max-width: 640px;
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -191,10 +191,7 @@
 	text-align: left;
 	text-rendering: optimizeLegibility;
 	word-break: break-word;
-}
-
-.kv-container :first-child {
-	margin-top: 0;
+	container-type: inline-size; /* Enable container query for inline size (width) */
 }
 
 b,
@@ -283,7 +280,7 @@ h3+h4 {
 }
 
 p {
-	margin: 0 0 24px;
+	margin: 1rem 0 1rem 0;
 	color: var(--body-color);
 	font-size: 16px;
 	line-height: 1.5;
@@ -304,93 +301,189 @@ p {
 /* List Styles */
 /*-------------*/
 
+/* Base Styles for Lists */
 ul,
 ol {
-	padding: 0 0 0 16px;
-	list-style: none !important;
+	margin-left: 1.5rem;
 	font-size: var(--font-size);
-}
+} 
 
-li {
+/* List Item Styles */
+ li {
 	position: relative;
-	padding-left: 30px;
-	margin-top: 10px;
-}
+	/* padding-left: .75rem; */
+	/* margin-top: 10px; */
+} 
+
+ li p {
+	margin-bottom: 0px !important;
+} 
 
 li:first-child {
-	margin-top: 24px;
-}
+	/* margin-top: 6px; */
+} 
 
+ li:last-child {
+	/* margin-bottom: 16px !important; */
+} 
 
-ul ul li:first-child {
-	margin-top: 10px;
-}
+ ul ul li:first-child {
+	/* margin-top: 6px; */
+} 
 
-li::before {
-	font-weight: 500;
-	left: 0;
-	position: absolute;
-	text-align: left;
-	top: 0;
-	width: 1.75rem;
-	-webkit-font-smoothing: subpixel-antialiased;
-}
+ol li {
+	counter-increment: list-item;
+} 
 
-ul>li::before {
-	content: "•";
-}
+/* -- Nested List  -- */
 
-ul>li::before,
-ol>li:before {
-	color: var(--list-color);
-}
-
+/* Set the first layer of list items to regular numeric decimals */
 ol {
-	counter-reset: decimal-counter;
+    list-style-type: decimal;
 }
 
-ol>li {
-	counter-increment: decimal-counter;
+/* Set the second layer of list items to lowercase alphabetic */
+ol > li > ol {
+    list-style-type: lower-alpha;
 }
 
-ol>li:before {
-	content: counter(decimal-counter) ". ";
+/* Set the third layer of list items to lowercase Roman numerals */
+ol > li > ol > li > ol {
+    list-style-type: lower-roman;
 }
 
-ol[style="list-style-type: upper-alpha;"]>li::before {
-	content: counter(decimal-counter, upper-alpha) ". ";
+/* Set the fourth layer of list items to regular numeric decimals */
+ol > li > ol > li > ol >li >ol {
+    list-style-type: decimal;
 }
 
-ol[style="list-style-type: lower-alpha;"]>li::before {
-	content: counter(decimal-counter, lower-alpha) ". ";
+/* Set the fifth layer of list items to regular lower alpha */
+ol > li > ol > li > ol >li >ol {
+    list-style-type: lower-alpha;
 }
 
-ol[style="list-style-type: upper-roman;"]>li::before {
-	content: counter(decimal-counter, upper-roman) ". ";
+/* Set the first layer of unordered list items to regular discs */
+ul {
+    list-style-type: disc;
 }
 
-ol[style="list-style-type: lower-roman;"]>li::before {
-	content: counter(decimal-counter, lower-roman) ". ";
+/* Set the second layer of unordered list items to open circle */
+ul > li > ul {
+    list-style-type: circle;
 }
 
-ol[style="list-style-type: lower-greek;"]>li::before {
-	background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%231a1a1a' d='m173.898 439.404-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z'/%3E%3C/svg%3E") 50% / cover no-repeat;
-	content: "";
-	height: var(--font-size-small);
-	left: 0;
-	position: absolute;
-	top: .1875rem;
-	width: var(--font-size-small);
+/* Set the third layer of unordered list items to squares */
+ul > li > ul > li > ul {
+    list-style-type: square;
 }
 
+/* Set the fourth layer of unordered list items to disc */
+ul > li > ul > li > ul >li > ul {
+    list-style-type: disc;
+}
+
+/* Set the fourth layer of unordered list items to circle */
+ul > li > ul > li > ul >li > ul {
+    list-style-type: circle;
+}
+
+/* Style Links Inside Lists */
 ol a,
 ul a {
 	font-weight: 500;
 }
 
-ul li {
-	list-style-type: none !important;
+/* Override only upper-roman lists */
+/* Base styles for upper-roman list and all its nested lists */
+ol[style*="upper-roman"],
+ol[style*="upper-roman"] ol {
+    list-style: none !important;
+    margin-left: 0;
 }
+
+/* Set up counters for the first list */
+ol[style*="upper-roman"] {
+    counter-reset: point-1;
+}
+
+/* Reset counters for each new level */
+ol[style*="upper-roman"] ol {
+    counter-reset: point-2;
+}
+
+ol[style*="upper-roman"] ol ol {
+    counter-reset: point-3;
+}
+
+ol[style*="upper-roman"] ol ol ol {
+    counter-reset: point-4;
+}
+
+ol[style*="upper-roman"] ol ol ol ol {
+    counter-reset: point-5;
+}
+
+/* Counter increments for each level */
+ol[style*="upper-roman"] > li {
+    counter-increment: point-1;
+}
+
+ol[style*="upper-roman"] ol > li {
+    counter-increment: point-2;
+}
+
+ol[style*="upper-roman"] ol ol > li {
+    counter-increment: point-3;
+}
+
+ol[style*="upper-roman"] ol ol ol > li {
+    counter-increment: point-4;
+}
+
+ol[style*="upper-roman"] ol ol ol ol > li {
+    counter-increment: point-5;
+}
+
+/* Position and styling for all list items */
+ol[style*="upper-roman"] li {
+    position: relative;
+}
+
+/* Common styles for all :before elements */
+ol[style*="upper-roman"] li:before {
+    position: absolute;
+    left: 0;
+    padding-right: 0.5rem;
+    font-weight: inherit;
+}
+
+/* Dynamic counter generation for each level */
+ol[style*="upper-roman"] > li:before { 
+    content: counter(point-1) "."; 
+}
+
+ol[style*="upper-roman"] ol > li:before { 
+    content: counter(point-1) "." counter(point-2) "."; 
+}
+
+ol[style*="upper-roman"] ol ol > li:before { 
+    content: counter(point-1) "." counter(point-2) "." counter(point-3) "."; 
+}
+
+ol[style*="upper-roman"] ol ol ol > li:before { 
+    content: counter(point-1) "." counter(point-2) "." counter(point-3) "." counter(point-4) "."; 
+}
+
+ol[style*="upper-roman"] ol ol ol ol > li:before { 
+    content: counter(point-1) "." counter(point-2) "." counter(point-3) "." counter(point-4) "." counter(point-5) "."; 
+}
+
+/* Padding for each level */
+ol[style*="upper-roman"] > li { padding-left: 2.5em; }
+ol[style*="upper-roman"] ol > li { padding-left: 3.5em; }
+ol[style*="upper-roman"] ol ol > li { padding-left: 4.5em; }
+ol[style*="upper-roman"] ol ol ol > li { padding-left: 5.5em; }
+ol[style*="upper-roman"] ol ol ol ol > li { padding-left: 6.5em; }
 
 /* End List Styles */
 
@@ -439,10 +532,6 @@ h2 a,
 h1 s,
 h2 s {
 	text-decoration-thickness: 2px !important;
-}
-
-ul li {
-	list-style-type: none !important;
 }
 
 pre {
@@ -499,8 +588,6 @@ svg {
 	}
 }
 
-/* End Media Styles */
-
 /* Start Table Styles */
 
 table {
@@ -511,7 +598,7 @@ table {
 
 td {
     word-wrap: break-word;
-    word-break: break-all; /* Breaks words at arbitrary points */
+    word-break: keep-all; /* Breaks words at arbitrary points */
     white-space: normal; /* Allows content to wrap */
 }
 
@@ -526,34 +613,32 @@ thead {
 	color: var(--body-color);
 }
 
-/* tr:nth-child(even) {
-    /background-color: var(--neutral-color-light);
-}
-
-tr:nth-child(odd) {
-    background-color: var(--neutral-color-light); 
-} */
-
 /* End Table Styles */
 
 /* Start Callout Styles */
 
 /* Base Callout Styles */
 .callout {
-    padding: 20px; /* Adjust padding to control top, right, bottom, left */
+    padding: 16px 20px; /* Adjust padding to control top, right, bottom, left */
     border-radius: 10px;
     border: 1px solid;
     margin: 16px 0;
     position: relative; /* Ensure the icon is positioned relative to the callout */
 }
 
+.callout-content {
+    margin: 5px 0 0 3rem; /* Matches inline margins */
+    line-height: 1.5; /* Matches line-height */
+    text-align: left; /* Text alignment */
+}
+
 /* Remove unnecessary margin from the first and last child */
 .callout > :first-child {
-    margin-top: 0; /* Ensure no extra margin at the top */
+    margin-top: 0; 
 }
 
 .callout > :last-child {
-    margin-bottom: 0; /* Ensure no extra margin at the bottom */
+    margin-bottom: 0;
 }
 
 /* Callout Icon anchored to the top-left */
@@ -572,8 +657,10 @@ tr:nth-child(odd) {
 .callout p {
     margin-left: 50px; /* Offset the text so it starts after the icon */
     margin-bottom: 0; /* Prevent extra space at the bottom */
+	margin-top: 0;
     line-height: 1.5;
     text-align: left;
+
 }
 
 /* If there's no icon, align text normally without the margin-left */
@@ -629,22 +716,7 @@ tr:nth-child(odd) {
 }
 
 /* Mobile Responsive Styles */
-@media screen and (max-width: 599px) {
-    .callout {
-        padding: 12px 15px;
-    }
 
-    .callout-icon {
-        width: 21px; /* Shrink the icon to 75% of default size */
-        height: 21px;
-        left: 15px; /* Adjust position to match the smaller padding */
-        top: 15px;
-    }
-
-    .callout p {
-        margin-left: 40px; /* Adjust text margin for smaller screens */
-    }
-}
 
 /* End Callout Styles*/
 
@@ -823,3 +895,24 @@ iframe {
 	top: 50%;
 	transform: translateY(-50%);
   }
+
+  /* Container-based media query */
+@container (max-width: 500px) {
+    .callout {
+        padding: 8px 10px; /* Adjust padding for smaller container */
+    }
+
+    .callout-icon {
+        width: 7.5px;
+        height: 7.5px;
+        left: 10px;
+        top: 10px;
+    }
+
+    .callout p {
+        margin-left: 30px; /* Adjust text margin */
+    }
+}
+
+/* End Media Styles */
+
