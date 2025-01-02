@@ -319,18 +319,6 @@ ol {
 	margin-bottom: 0px !important;
 } 
 
-li:first-child {
-	/* margin-top: 6px; */
-} 
-
- li:last-child {
-	/* margin-bottom: 16px !important; */
-} 
-
- ul ul li:first-child {
-	/* margin-top: 6px; */
-} 
-
 ol li {
 	counter-increment: list-item;
 } 
@@ -399,6 +387,8 @@ ol[style*="upper-roman"],
 ol[style*="upper-roman"] ol {
     list-style: none !important;
     margin-left: 0;
+	font-size: var(--font-size);
+	line-height: 1.5;
 }
 
 /* Set up counters for the first list */
@@ -455,6 +445,7 @@ ol[style*="upper-roman"] li:before {
     left: 0;
     padding-right: 0.5rem;
     font-weight: inherit;
+	line-height: 1.5;
 }
 
 /* Dynamic counter generation for each level */
