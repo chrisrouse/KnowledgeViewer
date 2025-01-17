@@ -229,8 +229,12 @@ h2,
 	color: var(--body-color);
 }
 
-h1,
 .kv-title {
+	font-size: var(--font-size-xl);
+}
+
+
+h1{
 	font-size: var(--font-size-large);
 }
 
@@ -295,6 +299,17 @@ p {
 	color: var(--secondary-color);
 	font-size: var(--font-size);
 	line-height: 1.53;
+}
+
+/*Fix scroll position for anchor links */
+a[id] {
+    display: block;
+    margin-top: -120px;
+    padding-top: 120px;
+}
+
+.slds-notify-container, .slds-notify_container {
+	z-index: 0
 }
 
 /*-------------*/
@@ -830,7 +845,7 @@ iframe {
 	color: #1a1a1a;
 	font-family: var(--benton-bold);
 	font-size: 22px;
-	font-weight: bold;
+	/* font-weight: bold; */
 	position: relative; /* Needed for the absolute positioning of the border */
 	border-bottom: 1px solid #e6e6e6;
 	margin: 0 12px 12px 12px; 
@@ -848,6 +863,9 @@ iframe {
 .kb-toc li {
 	padding-left: 0px;
 	padding: 0;
+	list-style: none; /* Removes bullets */
+	margin: 0; /* Removes default margins */
+	padding: 0; /* Removes default padding */
   }
   
 .kb-toc ul li {
@@ -878,9 +896,9 @@ iframe {
   }
   
   .kb-toc ul li a::after {
-	content: '›';
+	content: '\276F';
 	color: #f37c20;
-	font-size: 28px;
+	font-size: 20px;
 	position: absolute;
 	right: 10px; /* Moved to 10px from the edge */
 	top: 50%;

@@ -6,11 +6,19 @@ export default class KnowledgeComponent extends LightningElement {
     @api recordId;
     @api urlName;
 
+    @api
+    get articleRecordId() {
+        console.log('Getting articleRecordId:', this.recordId);
+        return this.recordId;
+    }
+
     strTitle;
     strSummary;
     strContent;
 
     connectedCallback() {
+        console.log('Connected callback - recordId:', this.recordId);
+
         // Fetch the article data
         if (this.recordId || this.urlName) {
             this.fetchKnowledgeArticle();
@@ -20,8 +28,12 @@ export default class KnowledgeComponent extends LightningElement {
     }
 
     fetchKnowledgeArticle() {
+        console.log('Fetching article with recordId:', this.recordId);
+
         getKnowledgeArticle({ recordId: this.recordId, urlName: this.urlName })
             .then(data => {
+                console.log('Article data received:', data?.Id);
+
                 if (data) {
                     this.setFields(data);
                 } else {
